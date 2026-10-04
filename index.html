@@ -3,33 +3,404 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Hindu Muppala, open to Junior NLP Engineer and Generative AI Engineer roles. Featured AI, NLP, RAG, and machine learning projects.">
-  <meta name="author" content="Hindu Muppala">
-  <meta name="theme-color" content="#07111f">
-  <meta property="og:title" content="Hindu Muppala | AI Portfolio">
-  <meta property="og:description" content="Junior NLP Engineer and Generative AI Engineer portfolio with featured AI projects.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Hindu Muppala | Junior NLP Engineer & Generative AI Engineer</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Hindu Muppala | Full-Stack AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Palette Colors */
+      --color-rose: #FFB1B1;
+      --color-peach: #FFCCB8;
+      --color-apricot: #FFDBB0;
+      --color-cream: #FFFAD3;
+      
+      /* Neutral Tones */
+      --color-bg: #FFFDF9;
+      --color-card-bg: #FFFFFF;
+      --color-text-main: #2D2828;
+      --color-text-muted: #6B6363;
+      --color-border: #F0E6DF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 253, 249, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--color-text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-rose), var(--color-peach));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--color-text-main);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-text-main);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 3rem 0 4rem;
+      max-width: 800px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--color-cream);
+      border: 1px solid var(--color-apricot);
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22C55E;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+      max-width: 680px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-rose), var(--color-peach));
+      color: var(--color-text-main);
+      border: none;
+      box-shadow: 0 4px 12px rgba(255, 177, 177, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255, 177, 177, 0.4);
+    }
+
+    .btn-secondary {
+      background-color: var(--color-card-bg);
+      color: var(--color-text-main);
+      border: 1px solid var(--color-border);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-cream);
+      border-color: var(--color-apricot);
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      color: var(--color-text-muted);
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    /* Skills Grid */
+    .skills-section {
+      margin-bottom: 5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background-color: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--color-apricot);
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background-color: var(--color-cream);
+      color: var(--color-text-main);
+      font-size: 0.85rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    /* Projects Grid */
+    .projects-section {
+      margin-bottom: 5rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background-color: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+      border-color: var(--color-peach);
+    }
+
+    .project-badge {
+      align-self: flex-start;
+      background: linear-gradient(135deg, var(--color-peach), var(--color-apricot));
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-card p {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-card ul {
+      list-style-position: inside;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card li {
+      margin-bottom: 0.35rem;
+    }
+
+    .project-footer {
+      margin-top: auto;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-tag {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      background-color: #F7F4F0;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(135deg, var(--color-cream), var(--color-apricot));
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-card h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-card p {
+      color: var(--color-text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      padding: 2rem;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.25rem; }
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" data-header>
-    <nav class="nav-shell" aria-label="Primary navigation">
-      <a class="brand" href="#home" aria-label="Hindu Muppala home">
-        <span class="brand-mark" aria-hidden="true">HM</span>
-        <span class="brand-name">Hindu Muppala</span>
+  <header>
+    <nav>
+      <a href="#" class="brand">
+        <span class="brand-avatar">HM</span>
+        <span>Hindu Muppala</span>
       </a>
-
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links" id="primary-navigation" data-nav-menu>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -38,313 +409,223 @@
     </nav>
   </header>
 
-  <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-overlay" aria-hidden="true"></div>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Open to Full-Stack AI & Associate Software Roles
+      </div>
+      <h1>Building production-ready AI applications & scalable systems.</h1>
+      <p>I am a software engineer focused on combining backend robustness with modern generative AI capabilities—building everything from high-performing web services to agentic RAG workflows.</p>
+      <div class="cta-group">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </section>
 
-      <div class="hero-inner">
-        <div class="hero-copy reveal">
-          <div class="availability-banner" aria-label="Open to work">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span>Open to Work</span>
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+      <h2 class="section-title">Technical Capabilities</h2>
+      <p class="section-subtitle">Core technologies I use to design, build, and deploy full-stack AI solutions.</p>
+      
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Full-Stack & Backend</h3>
+          <div class="tag-container">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">React</span>
+            <span class="tag">REST APIs</span>
           </div>
+        </div>
 
-          <p class="eyebrow">AI portfolio</p>
-          <h1 id="hero-title">Hindu Muppala</h1>
-          <p class="hero-subtitle">Junior NLP Engineer and Generative AI Engineer</p>
-          <p class="hero-lede">
-            Building practical NLP, RAG, LLM, and machine learning systems that connect strong engineering with clear user value.
-          </p>
-
-          <div class="role-pills" aria-label="Target roles">
-            <span>Junior Backend Engineer</span>
-            <span>Generative AI Engineer</span>
+        <div class="skill-card">
+          <h3>AI Engineering & RAG</h3>
+          <div class="tag-container">
+            <span class="tag">LangChain</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Hugging Face</span>
+            <span class="tag">FAISS</span>
+            <span class="tag">ChromaDB</span>
+            <span class="tag">Neo4j</span>
           </div>
+        </div>
 
-          <div class="hero-actions" aria-label="Portfolio actions">
-            <a class="button button-primary" href="#projects">View Projects</a>
-            <a class="button button-secondary" href="#contact">Contact Me</a>
+        <div class="skill-card">
+          <h3>Machine Learning</h3>
+          <div class="tag-container">
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">NLP</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>DevOps & Cloud</h3>
+          <div class="tag-container">
+            <span class="tag">Docker</span>
+            <span class="tag">Git</span>
+            <span class="tag">AWS</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Socket.IO</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="role-strip" aria-label="Availability summary">
-      <div class="section-shell role-strip-inner">
-        <p>Open for AI engineering opportunities</p>
-        <div class="role-strip-list" aria-label="Open roles">
-          <span>Junior NLP Engineer</span>
-          <span>Generative AI Engineer</span>
-        </div>
-      </div>
-    </section>
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+      <h2 class="section-title">Featured Work</h2>
+      <p class="section-subtitle">A collection of full-stack AI systems, retrieval pipelines, and real-time tools.</p>
 
-    <section class="section about-section" id="about" aria-labelledby="about-title">
-      <div class="section-shell about-grid">
-        <div class="section-copy reveal">
-          <p class="section-kicker">About</p>
-          <h2 id="about-title">Focused on applied NLP, LLMs, and intelligent products.</h2>
-          <p>
-            I am software engineer passionate about building the scalable, reliable applications. I enjoy building products that combine machine learning, backend engineering, and thoughtful product design.
-          </p>
-          <p>
-            My current work explores RAG systems, agentic AI, vector databases, knowledge graphs, and practical AI workflows that can support real users.
-          </p>
-        </div>
+      <div class="projects-grid">
 
-        <div class="about-highlights reveal" aria-label="Portfolio highlights">
-          <div class="metric">
-            <span class="metric-value">5</span>
-            <span class="metric-label">Featured Projects</span>
+        <div class="project-card">
+          <div>
+            <span class="project-badge">Agentic AI & Knowledge Graph</span>
+            <h3>AI Career Counselor</h3>
+            <p>An intelligent platform providing personalized guidance through multi-agent workflows and graph-structured role intelligence.</p>
+            <ul>
+              <li>Graph-based job skill gap detection using Neo4j</li>
+              <li>Agentic flow orchestration with LangChain</li>
+              <li>Responsive React UI powered by a Flask backend</li>
+            </ul>
           </div>
-          <div class="metric">
-            <span class="metric-value">AI</span>
-            <span class="metric-label">NLP, RAG, LLM Focus</span>
-          </div>
-          <div class="metric">
-            <span class="metric-value">Full</span>
-            <span class="metric-label">Product Build Mindset</span>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">LangChain</span>
+              <span class="project-tag">Neo4j</span>
+              <span class="project-tag">React</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hindu-muppala" target="_blank" class="project-link">GitHub ↗</a>
+              <a href="#contact" class="project-link">Demo ↗</a>
+            </div>
           </div>
         </div>
+
+        <div class="project-card">
+          <div>
+            <span class="project-badge">Retrieval-Augmented Gen</span>
+            <h3>Finance RAG Chatbot</h3>
+            <p>Enterprise search and QA tool designed for precision querying over dense financial documentation.</p>
+            <ul>
+              <li>Document chunking & semantic search via FAISS</li>
+              <li>Context-aware response generation with Guardrails</li>
+              <li>Optimized context windows to reduce latency</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">RAG</span>
+              <span class="project-tag">FAISS</span>
+              <span class="project-tag">LLMs</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hindu-muppala" target="_blank" class="project-link">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="project-badge">Multilingual NLP</span>
+            <h3>Multilingual Health Assistant</h3>
+            <p>Voice-enabled patient interaction platform processing queries across various spoken languages.</p>
+            <ul>
+              <li>Integrated speech-to-text and text-to-speech pipelines</li>
+              <li>Language-aware conversational flows</li>
+              <li>Structured output formatting for medical clarity</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">LLMs</span>
+              <span class="project-tag">Speech APIs</span>
+              <span class="project-tag">Python</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hindu-muppala" target="_blank" class="project-link">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="project-badge">Geospatial ML</span>
+            <h3>Urban Heat Island Prediction</h3>
+            <p>Predictive modeling framework processing satellite imagery to assess regional heat metrics.</p>
+            <ul>
+              <li>Processed Landsat & Sentinel raster datasets</li>
+              <li>XGBoost pipeline predicting surface temperatures</li>
+              <li>GIS mapping integration for spatial visualization</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">GIS</span>
+              <span class="project-tag">Landsat</span>
+              <span class="project-tag">Sentinel</span>
+              <span class="project-tag">XGBoost</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hindu-muppala" target="_blank" class="project-link">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="project-badge">Full-Stack Web</span>
+            <h3>Collaborative Code Editor</h3>
+            <p>Real-time shared coding editor enabling synchronized multi-user developer workflows.</p>
+            <ul>
+              <li>Low-latency document syncing with Socket.IO</li>
+              <li>React frontend with custom state management</li>
+              <li>Node.js and MongoDB scalable backend</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">Socket.IO</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hindu-muppala" target="_blank" class="project-link">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="section skills-section" id="skills" aria-labelledby="skills-title">
-      <div class="section-shell">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Skills</p>
-          <h2 id="skills-title">Tools and technologies for building AI applications.</h2>
-        </div>
-
-        <div class="skills-grid reveal" aria-label="Technical skills">
-          <span>Python</span>
-          <span>PyTorch</span>
-          <span>TensorFlow</span>
-          <span>Transformers</span>
-          <span>LangChain</span>
-          <span>OpenAI API</span>
-          <span>Hugging Face</span>
-          <span>FAISS</span>
-          <span>ChromaDB</span>
-          <span>Neo4j</span>
-          <span>FastAPI</span>
-          <span>Flask</span>
-          <span>React</span>
-          <span>Docker</span>
-          <span>Git</span>
-          <span>AWS</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
-      <div class="section-shell">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Featured Projects</p>
-          <h2 id="projects-title">Project showcase for AI, NLP, and data-driven systems.</h2>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card project-card-featured reveal">
-            <div class="project-visual visual-career" aria-hidden="true">
-              <span class="visual-node node-a"></span>
-              <span class="visual-node node-b"></span>
-              <span class="visual-node node-c"></span>
-              <span class="visual-line line-a"></span>
-              <span class="visual-line line-b"></span>
-              <span class="visual-label">Agentic Career AI</span>
-            </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-type">Featured</span>
-                <span class="project-status">LLM + RAG</span>
-              </div>
-              <h3>AI Career Counselor</h3>
-              <p>
-                An intelligent career guidance platform powered by LLMs, RAG, a Neo4j knowledge graph, and an agentic workflow.
-              </p>
-              <ul class="project-points">
-                <li>Personality analysis and role recommendation</li>
-                <li>Job skill gap detection</li>
-                <li>Knowledge graph for career paths</li>
-                <li>Multi-agent workflow design</li>
-              </ul>
-              <div class="tech-stack" aria-label="Technologies">
-                <span>Python</span>
-                <span>LangChain</span>
-                <span>Neo4j</span>
-                <span>React</span>
-                <span>Flask</span>
-                <span>OpenAI</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/your-username/ai-career-counselor" target="_blank" rel="noreferrer">GitHub</a>
-                <a href="#contact">Live Demo</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-visual visual-finance" aria-hidden="true">
-              <span class="chart-bar bar-a"></span>
-              <span class="chart-bar bar-b"></span>
-              <span class="chart-bar bar-c"></span>
-              <span class="visual-label">Finance RAG</span>
-            </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-type">Retrieval</span>
-                <span class="project-status">Semantic Search</span>
-              </div>
-              <h3>Finance RAG Chatbot</h3>
-              <p>
-                A chatbot for asking financial questions using retrieval-augmented generation over trusted document sources.
-              </p>
-              <ul class="project-points">
-                <li>PDF search and chunk retrieval</li>
-                <li>Vector database backed context</li>
-                <li>Context-aware answer generation</li>
-              </ul>
-              <div class="tech-stack" aria-label="Technologies">
-                <span>Python</span>
-                <span>RAG</span>
-                <span>FAISS</span>
-                <span>LLMs</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-visual visual-health" aria-hidden="true">
-              <span class="pulse-line"></span>
-              <span class="pulse-dot dot-a"></span>
-              <span class="pulse-dot dot-b"></span>
-              <span class="visual-label">Health NLP</span>
-            </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-type">Assistant</span>
-                <span class="project-status">Multilingual</span>
-              </div>
-              <h3>Multilingual Health Assistant</h3>
-              <p>
-                A healthcare chatbot supporting speech and multiple languages using NLP and LLM-based response flows.
-              </p>
-              <ul class="project-points">
-                <li>Language-aware conversation flow</li>
-                <li>Speech interface support</li>
-                <li>Patient-friendly answer structure</li>
-              </ul>
-              <div class="tech-stack" aria-label="Technologies">
-                <span>NLP</span>
-                <span>LLMs</span>
-                <span>Speech</span>
-                <span>Python</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-visual visual-geo" aria-hidden="true">
-              <span class="map-cell cell-a"></span>
-              <span class="map-cell cell-b"></span>
-              <span class="map-cell cell-c"></span>
-              <span class="map-cell cell-d"></span>
-              <span class="visual-label">Geo AI</span>
-            </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-type">Geospatial AI</span>
-                <span class="project-status">Prediction</span>
-              </div>
-              <h3>Urban Heat Island Prediction</h3>
-              <p>
-                A geospatial machine learning project using satellite imagery, GIS data, and predictive modeling.
-              </p>
-              <ul class="project-points">
-                <li>Landsat and Sentinel imagery</li>
-                <li>Raster processing pipeline</li>
-                <li>XGBoost-based prediction workflow</li>
-              </ul>
-              <div class="tech-stack" aria-label="Technologies">
-                <span>GIS</span>
-                <span>Landsat</span>
-                <span>Sentinel</span>
-                <span>XGBoost</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-visual visual-code" aria-hidden="true">
-              <span class="code-line code-a"></span>
-              <span class="code-line code-b"></span>
-              <span class="code-line code-c"></span>
-              <span class="cursor-block"></span>
-              <span class="visual-label">Realtime Code</span>
-            </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-type">Full Stack</span>
-                <span class="project-status">Realtime</span>
-              </div>
-              <h3>Collaborative Code Editor</h3>
-              <p>
-                A realtime collaborative coding platform for shared editing sessions and synchronized developer workflows.
-              </p>
-              <ul class="project-points">
-                <li>Realtime collaboration using Socket.IO</li>
-                <li>React-based editor interface</li>
-                <li>Node and MongoDB backend</li>
-              </ul>
-              <div class="tech-stack" aria-label="Technologies">
-                <span>React</span>
-                <span>Node</span>
-                <span>MongoDB</span>
-                <span>Socket.IO</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="section-shell contact-grid">
-        <div class="section-copy reveal">
-          <p class="section-kicker">Contact</p>
-          <h2 id="contact-title">Let's build useful AI systems.</h2>
-          <p>
-            I am open to junior NLP, generative AI, and machine learning engineering roles where I can contribute to real-world AI products.
-          </p>
-        </div>
-
-        <div class="contact-panel reveal" aria-label="Contact links">
-          <a class="contact-link" href="mailto:hindumuppala@gmail.com">
-            <span>Email</span>
-            <strong>hindumuppala@gmail.com</strong>
-          </a>
-          <a class="contact-link" href="https://www.linkedin.com/in/hindu-muppala" target="_blank" rel="noreferrer">
-            <span>LinkedIn</span>
-            <strong>linkedin.com/in/hindu-muppala</strong>
-          </a>
-          <a class="contact-link" href="https://github.com/hindu-muppala" target="_blank" rel="noreferrer">
-            <span>GitHub</span>
-            <strong>github.com/hindu-muppala</strong>
-          </a>
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="contact-card">
+        <h2>Let’s connect</h2>
+        <p>I am actively seeking Full-Stack AI Engineer and Associate Software Engineer roles. Feel free to reach out via email or LinkedIn.</p>
+        <div class="contact-links">
+          <a href="mailto:hindumuppala@gmail.com" class="btn btn-primary">Email Me</a>
+          <a href="https://linkedin.com/in/hindu-muppala" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+          <a href="https://github.com/hindu-muppala" target="_blank" class="btn btn-secondary">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="section-shell footer-inner">
-      <p>Built for GitHub Pages.</p>
-      <p>&copy; <span data-year>2026</span> Hindu Muppala. All rights reserved.</p>
-    </div>
+  <footer>
+    <p>© 2026 Hindu Muppala. Built with minimal, accessible UI patterns.</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
