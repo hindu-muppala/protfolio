@@ -478,34 +478,34 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
+   <!-- Projects Section -->
     <section class="projects-section" id="projects">
       <h2 class="section-title">Featured Work</h2>
-      <p class="section-subtitle">A collection of full-stack AI systems, retrieval pipelines, and real-time tools.</p>
+      <p class="section-subtitle">A collection of full-stack AI systems, retrieval pipelines, deep learning models, and real-time tools.</p>
 
       <div class="projects-grid">
 
+        <!-- NEW: replaces AI Career Counselor (based on your Infosys Springboard internship) -->
         <div class="project-card">
           <div>
-            <span class="project-badge">Agentic AI & Knowledge Graph</span>
-            <h3>AI Career Counselor</h3>
-            <p>An intelligent platform providing personalized guidance through multi-agent workflows and graph-structured role intelligence.</p>
+            <span class="project-badge">Deep Learning & Computer Vision</span>
+            <h3>Image Captioning System</h3>
+            <p>Deep learning model that generates natural-language descriptions for images, built during my AI/ML internship at Infosys Springboard.</p>
             <ul>
-              <li>Graph-based job skill gap detection using Neo4j</li>
-              <li>Agentic flow orchestration with LangChain</li>
-              <li>Responsive React UI powered by a Flask backend</li>
+              <li>Applied pre-trained CNN encoders for image feature extraction</li>
+              <li>Compared pre-trained methods with natively trained models</li>
+              <li>Sequence decoder generating captions from visual features</li>
             </ul>
           </div>
           <div class="project-footer">
             <div class="project-tags">
               <span class="project-tag">Python</span>
-              <span class="project-tag">LangChain</span>
-              <span class="project-tag">Neo4j</span>
-              <span class="project-tag">React</span>
+              <span class="project-tag">Deep Learning</span>
+              <span class="project-tag">CNN</span>
+              <span class="project-tag">NLP</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/hindu-muppala" target="_blank" class="project-link">GitHub ↗</a>
-              <a href="#contact" class="project-link">Demo ↗</a>
             </div>
           </div>
         </div>
@@ -604,6 +604,158 @@
               <a href="https://github.com/hindu-muppala" target="_blank" class="project-link">GitHub ↗</a>
             </div>
           </div>
+        </div>
+
+      </div>
+
+      <!-- NEW: Highlights (from your resume) -->
+      <style>
+        .highlights { margin-top: 3rem; }
+        .highlights h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+        .highlights-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+          gap: 1rem;
+        }
+        .highlight-item {
+          padding: 1.1rem 1.25rem;
+          border: 1px solid rgba(128, 128, 128, 0.3);
+          border-radius: 12px;
+        }
+        .highlight-item strong { display: block; margin-bottom: 0.35rem; }
+        .highlight-item span { font-size: 0.9rem; opacity: 0.8; }
+      </style>
+
+      <div class="highlights">
+        <h3>Experience & Highlights</h3>
+        <div class="highlights-grid">
+          <div class="highlight-item">
+            <strong>AI Engineer, CoreTek Labs</strong>
+            <span>Building full-stack AI systems. May 2026 – Present.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>Top 3, AII India Hackathon</strong>
+            <span>Placed in the top three nationally.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>Accenture Trainee</strong>
+            <span>Industry training in software engineering. Jan – Jun 2025.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>Placement Coordinator, CBIT</strong>
+            <span>Coordinated with companies like Zapcom and Runo for campus placements.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internships Section -->
+    <style>
+      .internships-section { padding: 3rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+      .internship-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
+      .internship-card {
+        display: grid;
+        grid-template-columns: 190px 1fr;
+        gap: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        border: 1px solid rgba(128, 128, 128, 0.3);
+        border-radius: 12px;
+      }
+      .internship-date { font-size: 0.9rem; opacity: 0.75; }
+      .internship-card h3 { margin: 0 0 0.15rem; font-size: 1.1rem; }
+      .internship-org { margin: 0 0 0.6rem; opacity: 0.85; }
+      .internship-card ul { margin: 0; padding-left: 1.1rem; }
+      .internship-card li { margin-bottom: 0.3rem; }
+      @media (max-width: 640px) {
+        .internship-card { grid-template-columns: 1fr; gap: 0.4rem; }
+      }
+    </style>
+
+    <section class="internships-section" id="internships">
+      <h2 class="section-title">Internships</h2>
+      <p class="section-subtitle">Hands-on industry and research experience alongside my degree.</p>
+
+      <div class="internship-list">
+
+        <div class="internship-card">
+          <div class="internship-date">Jan 2025 – Jun 2025</div>
+          <div>
+            <h3>Accenture Trainee</h3>
+            <p class="internship-org">Accenture</p>
+            <ul>
+              <li>Completed industry training in software engineering practices</li>
+              <li>Worked in a professional, team-based delivery environment</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="internship-card">
+          <div class="internship-date">May 2024 – Jul 2024</div>
+          <div>
+            <h3>AI/ML Intern</h3>
+            <p class="internship-org">Infosys Springboard</p>
+            <ul>
+              <li>Worked on an image captioning deep learning problem</li>
+              <li>Applied pre-trained methods and native training techniques</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="internship-card">
+          <div class="internship-date">Nov 2023 – Dec 2023</div>
+          <div>
+            <h3>Rural Internship</h3>
+            <p class="internship-org">ACIC, CBIT</p>
+            <ul>
+              <li>Completed a rural internship through CBIT's Atal Community Innovation Centre</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <style>
+      .achievements-section { padding: 3rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .achievement-card {
+        padding: 1.25rem 1.5rem;
+        border: 1px solid rgba(128, 128, 128, 0.3);
+        border-radius: 12px;
+      }
+      .achievement-card h3 { margin: 0 0 0.4rem; font-size: 1.1rem; }
+      .achievement-card p { margin: 0; opacity: 0.85; font-size: 0.95rem; }
+      .achievement-meta { display: block; margin-top: 0.6rem; font-size: 0.85rem; opacity: 0.65; }
+    </style>
+
+    <section class="achievements-section" id="achievements">
+      <h2 class="section-title">Achievements</h2>
+      <p class="section-subtitle">Recognition for building, learning, and leading.</p>
+
+      <div class="achievements-grid">
+
+        <div class="achievement-card">
+          <h3>Top 3, AII India Hackathon</h3>
+          <p>Placed among the top three teams in a national-level AI hackathon.</p>
+          <span class="achievement-meta">Hackathon</span>
+        </div>
+
+        <div class="achievement-card">
+          <h3>First Class with Distinction</h3>
+          <p>Graduated B.E. in Computer Science and Engineering from Chaitanya Bharathi Institute of Technology.</p>
+          <span class="achievement-meta">CBIT, 2021 – 2025</span>
+        </div>
+
+        <div class="achievement-card">
+          <h3>Placement Coordinator</h3>
+          <p>Selected to coordinate campus placements, working with companies such as Zapcom and Runo.</p>
+          <span class="achievement-meta">CBIT Placement Office, Jul 2024 – Apr 2025</span>
         </div>
 
       </div>
